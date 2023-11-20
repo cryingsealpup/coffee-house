@@ -29,18 +29,28 @@ module.exports = {
           sourceMap: true
         }
       }]
+    }, {
+      test: /\.pug$/,
+      loader: 'pug-loader'
     }]
   },
   devServer: {
     open: true,
-    watchFiles: ['./index.html', './src/assets/sass/*']
+    watchFiles: ['./src/sass/*', './src/pug/main/*', './src/pug/menu/*']
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: 'index.html'
-  }), new MiniCssExtractPlugin(), new CopyWebpackPlugin({
+  plugins: [new MiniCssExtractPlugin(), new CopyWebpackPlugin({
     patterns: [{
       from: path.resolve(__dirname, './src/assets/img'),
       to: path.resolve(__dirname, 'dist/images')
+    }, {
+      from: path.resolve(__dirname, './src/assets/favicon'),
+      to: path.resolve(__dirname, 'dist/favicon')
     }]
+  }), new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, './src/pug/main/index.pug'),
+    filename: 'index.html'
+  }), new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, './src/pug/menu/index.pug'),
+    filename: 'menu.html'
   })]
 };
