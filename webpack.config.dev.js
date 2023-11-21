@@ -15,20 +15,29 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[name][ext]'
   },
   module: {
     rules: [{
       test: /\.(png|jpg|gif|svg)$/,
       type: 'asset/resource'
     }, {
-      test: /\.(s*)ass$/,
-      use: ["style-loader", "css-loader", {
-        loader: "sass-loader",
-        options: {
-          sourceMap: true
-        }
-      }]
+      test: /\.css$/i,
+      use: [{
+        loader: MiniCssExtractPlugin.loader
+      }, "css-loader"]
+    }, {
+      test: /\.s[ac]ss$/,
+      use: [{
+        loader: MiniCssExtractPlugin.loader // options: {
+        //     publicPath: (resourcePath, context) => {
+        //         return path.relative(path.dirname(resourcePath), context);
+        //     } // ,
+        //     // sourceMap: true,
+        // }
+
+      }, "css-loader", 'sass-loader']
     }, {
       test: /\.pug$/,
       loader: 'pug-loader'
@@ -38,7 +47,9 @@ module.exports = {
     open: true,
     watchFiles: ['./src/sass/*', './src/pug/main/*', './src/pug/menu/*']
   },
-  plugins: [new MiniCssExtractPlugin(), new CopyWebpackPlugin({
+  plugins: [new MiniCssExtractPlugin({
+    filename: 'style.css'
+  }), new CopyWebpackPlugin({
     patterns: [{
       from: path.resolve(__dirname, './src/assets/img'),
       to: path.resolve(__dirname, 'dist/images')
