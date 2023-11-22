@@ -58,8 +58,14 @@ h1 {
 
 h2 {
   margin: 0;
-  font-size: 6rem;
+  font-size: 6rem; }
+
+h2, h3 {
   line-height: 125%; }
+
+h3 {
+  margin: 0;
+  font-size: 2.4rem; }
 
 ul {
   margin: 0;
@@ -75,7 +81,8 @@ li {
     border-radius: 4rem;
     display: flex;
     gap: 10rem;
-    padding: 10rem; }
+    padding: 10rem;
+    align-items: center; }
     .footer-wrap > * {
       flex: 1;
       display: flex;
@@ -84,10 +91,23 @@ li {
 
 .socials {
   display: flex;
-  gap: 1.2rem; }
-  .socials-item {
-    width: 6rem;
-    height: 6rem; }
+  gap: 1.04rem;
+  color: transparent; }
+  .socials-link {
+    width: 5.99rem;
+    height: 5.99rem;
+    border: 0.01rem solid #E1D4C9;
+    border-radius: 100%;
+    transition: all 0.1s ease-in; }
+    .socials-link:hover {
+      background: #E1D4C9; }
+  .socials-item, .socials-item.path2, .socials-item.path3 {
+    width: inherit;
+    height: inherit;
+    stroke: #E1D4C9; }
+    .socials-item:hover, .socials-item.path2:hover, .socials-item.path3:hover {
+      color: #E1D4C9;
+      stroke: #403F3D; }
 
 .logo {
   height: 6rem; }
