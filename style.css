@@ -1,6 +1,7 @@
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/app.sass ***!
   \************************************************************************************************************/
+@charset "UTF-8";
 html {
   font-size: 10px;
   scroll-behavior: smooth; }
@@ -21,6 +22,12 @@ p, h1, h2, h3, ul {
   margin: 0 auto;
   box-sizing: border-box;
   padding: 1rem 4rem; }
+
+main > *:not(:last-child) {
+  padding-bottom: 5rem; }
+
+main > *:not(:first-child) {
+  padding-top: 5rem; }
 
 a {
   text-decoration: none;
@@ -46,6 +53,22 @@ button {
     background: #E1D4C9;
     font-size: 1.6rem;
     line-height: 150%; }
+  .button-left, .button-right {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 100%;
+    border: 0.1rem solid #665F55;
+    box-sizing: content-box;
+    margin: 0.2rem;
+    color: #403F3D;
+    transition: all 0.15s ease; }
+    .button-left:hover, .button-right:hover {
+      background: #403F3D;
+      color: #E1D4C9; }
+  .button-left::before {
+    content: "←"; }
+  .button-right::before {
+    content: "→"; }
 
 .hover-coffee {
   display: flex;
@@ -64,11 +87,8 @@ h1 {
 h2 {
   font-size: 6rem; }
 
-h2, h3 {
+h2 {
   line-height: 125%; }
-
-h3 {
-  font-size: 2.4rem; }
 
 ul {
   padding: 0; }
@@ -153,17 +173,83 @@ li {
   color: #B0907A;
   display: inline-block;
   transform: skewX(-9deg);
-  margin-right: 1.8rem; }
+  margin-right: 1.7rem; }
+
+.bold {
+  font-size: 2.4rem;
+  line-height: 125%;
+  font-weight: 600; }
 
 .hero {
   color: #E1D4C9; }
   .hero-offer {
     padding: 10rem 73rem 10rem 10rem;
-    background: url(images/img-hero.png);
+    background-image: url(images/img-hero.png);
+    background-position-y: center;
+    background-size: cover;
     border-radius: 4rem;
     display: flex;
     flex-direction: column;
     gap: 4rem; }
     .hero-offer .button a {
       margin-left: 2.8rem; }
+
+.slider, .slider-wrapper, .slides, .choose, .slide, .controls, .about {
+  display: flex; }
+
+.choose {
+  text-align: center;
+  gap: 4rem;
+  margin-bottom: -1.4rem; }
+
+.slider, .choose, .slide, .about {
+  flex-direction: column;
+  align-items: center; }
+
+.slider {
+  gap: 2.2rem;
+  width: 100%; }
+  .slider-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; }
+
+.slides {
+  width: 48rem;
+  overflow: hidden; }
+
+.slide {
+  gap: 1.6rem; }
+  .slide-image {
+    height: 48rem;
+    object-fit: cover;
+    margin-bottom: 0.4rem; }
+
+.controls-btn {
+  cursor: pointer;
+  padding: 0.6rem;
+  transition: all 0.15s ease; }
+  .controls-btn.active::before {
+    background: #665F55; }
+  .controls-btn:hover::before {
+    background: #665F55; }
+  .controls-btn::before {
+    content: "";
+    display: inline-block;
+    border-radius: 10rem;
+    width: 4rem;
+    height: 0.4rem;
+    background: #C1B6AD;
+    transition: all 0.1s ease; }
+
+.about {
+  gap: 4rem; }
+  .about-masonry {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+    grid-template-rows: masonry; }
+    .about-masonry img {
+      max-width: fit-content; }
 
