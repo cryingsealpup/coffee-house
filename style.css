@@ -2,7 +2,8 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/app.sass ***!
   \************************************************************************************************************/
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  scroll-behavior: smooth; }
 
 body {
   background: #E1D4C9;
@@ -11,6 +12,9 @@ body {
   font-size: 1.6rem;
   line-height: 150%;
   margin: 1rem 0 0; }
+
+p, h1, h2, h3, ul {
+  margin: 0; }
 
 .container {
   max-width: 144rem;
@@ -39,7 +43,9 @@ button {
   align-items: center;
   color: #403F3D; }
   .button-primary {
-    background: #E1D4C9; }
+    background: #E1D4C9;
+    font-size: 1.6rem;
+    line-height: 150%; }
 
 .hover-coffee {
   display: flex;
@@ -53,22 +59,18 @@ button {
 
 h1 {
   font-size: 7.2rem;
-  margin: 0;
   line-height: 105%; }
 
 h2 {
-  margin: 0;
   font-size: 6rem; }
 
 h2, h3 {
   line-height: 125%; }
 
 h3 {
-  margin: 0;
   font-size: 2.4rem; }
 
 ul {
-  margin: 0;
   padding: 0; }
 
 li {
@@ -100,14 +102,19 @@ li {
     border-radius: 100%;
     transition: all 0.1s ease-in; }
     .socials-link:hover {
-      background: #E1D4C9; }
+      background: #E1D4C9;
+      color: #E1D4C9; }
   .socials-item, .socials-item.path2, .socials-item.path3 {
     width: inherit;
     height: inherit;
     stroke: #E1D4C9; }
     .socials-item:hover, .socials-item.path2:hover, .socials-item.path3:hover {
-      color: #E1D4C9;
       stroke: #403F3D; }
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem; }
 
 .logo {
   height: 6rem; }
@@ -144,7 +151,9 @@ li {
 
 .accent {
   color: #B0907A;
-  font-style: italic; }
+  display: inline-block;
+  transform: skewX(-9deg);
+  margin-right: 1.8rem; }
 
 .hero {
   color: #E1D4C9; }
@@ -154,5 +163,7 @@ li {
     border-radius: 4rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem; }
+    gap: 4rem; }
+    .hero-offer .button a {
+      margin-left: 2.8rem; }
 
