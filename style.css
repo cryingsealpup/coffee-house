@@ -69,6 +69,22 @@ button {
     content: "←"; }
   .button-right::before {
     content: "→"; }
+  .button-app {
+    border: 0.1rem solid #665F55;
+    color: #665F55;
+    border-radius: 10rem;
+    display: flex; }
+    .button-app a {
+      display: flex;
+      flex-direction: column; }
+    .button-app svg, .button-app #app-store {
+      fill: #665F55;
+      color: #665F55;
+      height: 3.6rem;
+      width: 3.6rem; }
+    .button-app.app-store:before {
+      color: #665F55;
+      content: url(images/app.svg#google-play); }
 
 .hover-coffee {
   display: flex;
@@ -180,6 +196,11 @@ li {
   line-height: 125%;
   font-weight: 600; }
 
+.small {
+  font-size: 1rem;
+  line-height: 140%;
+  font-weight: 600; }
+
 .hero {
   color: #E1D4C9; }
   .hero-offer {
@@ -245,11 +266,46 @@ li {
 .about {
   gap: 4rem; }
   .about-masonry {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4rem;
-    grid-template-rows: masonry; }
-    .about-masonry img {
-      max-width: fit-content; }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem; }
+    .about-masonry__col {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      width: 66rem;
+      border-radius: 2rem; }
+      .about-masonry__col:nth-child(even) .about-masonry__item:first-child {
+        height: 43rem; }
+      .about-masonry__col:nth-child(odd) .about-masonry__item:last-child {
+        height: 43rem; }
+    .about-masonry__item {
+      width: inherit;
+      max-height: 59rem;
+      flex: 1 auto;
+      border-radius: 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .about-masonry__item img {
+        object-fit: cover;
+        object-position: center; }
+
+.app-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10rem; }
+  .app-wrap > * {
+    flex: 1; }
+  .app-wrap::after {
+    content: '';
+    background-image: url(images/mobile-screens.png);
+    width: 63rem;
+    height: 63rem; }
+  .app-wrap-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; }
 
