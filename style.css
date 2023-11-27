@@ -71,20 +71,26 @@ button {
     content: "→"; }
   .button-app {
     border: 0.1rem solid #665F55;
+    width: 20rem;
     color: #665F55;
     border-radius: 10rem;
-    display: flex; }
+    transition: all 0.1s ease-in;
+    padding: 1.2rem 2rem;
+    display: inline-block; }
+    .button-app:hover {
+      background: #665F55;
+      color: #E1D4C9; }
     .button-app a {
       display: flex;
-      flex-direction: column; }
-    .button-app svg, .button-app #app-store {
-      fill: #665F55;
-      color: #665F55;
+      gap: 0.8rem;
+      align-items: center; }
+    .button-app p {
+      display: flex;
+      flex-direction: column;
+      text-align: left; }
+    .button-app svg {
       height: 3.6rem;
       width: 3.6rem; }
-    .button-app.app-store:before {
-      color: #665F55;
-      content: url(images/app.svg#google-play); }
 
 .hover-coffee {
   display: flex;
@@ -111,6 +117,9 @@ ul {
 
 li {
   list-style: none; }
+
+footer {
+  margin-top: 8rem; }
 
 .footer {
   color: #E1D4C9; }
@@ -160,7 +169,6 @@ li {
     object-fit: cover; }
 
 .header {
-  font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -200,6 +208,11 @@ li {
   font-size: 1rem;
   line-height: 140%;
   font-weight: 600; }
+
+.action {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 150%; }
 
 .hero {
   color: #E1D4C9; }
@@ -291,7 +304,12 @@ li {
       justify-content: center; }
       .about-masonry__item img {
         object-fit: cover;
-        object-position: center; }
+        object-position: center;
+        transition: all 0.1s ease-in;
+        cursor: pointer; }
+        .about-masonry__item img:hover {
+          width: calc(100% + 72.6rem * 0.05);
+          transform: scale(0.95); }
 
 .app-wrap {
   display: flex;
@@ -304,8 +322,16 @@ li {
     background-image: url(images/mobile-screens.png);
     width: 63rem;
     height: 63rem; }
-  .app-wrap-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem; }
+
+.app-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; }
+
+.app-links {
+  display: flex;
+  gap: 2rem; }
+
+.menu {
+  text-align: center; }
 
