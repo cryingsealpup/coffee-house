@@ -213,6 +213,11 @@ footer {
   .contacts .contacts-hours span::before {
     content: url(images/clock.svg); }
 
+@media (max-width: 64em) {
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start; } }
+
 .logo {
   height: 6rem; }
   .logo img {
@@ -279,6 +284,10 @@ footer {
     gap: 4rem; }
     .hero-offer .button span {
       margin-left: 2.8rem; }
+
+@media (max-width: 64em) {
+  .hero-offer {
+    padding: 10rem 28rem 10rem 6rem; } }
 
 .slider, .slider-wrapper, .slides, .choose, .slide, .controls, .about {
   display: flex; }
@@ -370,6 +379,10 @@ footer {
 .app-links {
   display: flex;
   gap: 2rem; }
+
+@media (max-width: 64em) {
+  .app-wrap {
+    flex-direction: column; } }
 
 .menu {
   text-align: center;
