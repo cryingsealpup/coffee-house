@@ -108,7 +108,8 @@ button {
 
 .coffee-static {
   display: flex;
-  gap: 0.8rem; }
+  gap: 0.8rem;
+  cursor: pointer; }
   .coffee-static::after {
     content: url(images/coffee-cup.svg); }
 
