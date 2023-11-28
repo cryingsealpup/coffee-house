@@ -46,6 +46,7 @@ button {
   width: 20rem;
   height: 6.4rem;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   color: #403F3D; }
@@ -59,10 +60,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    transition: all 0.15s ease; }
-    .button-menu:hover, .button-menu .active {
+    transition: all 0.15s ease;
+    cursor: pointer; }
+    .button-menu:hover, .button-menu.active {
       background: #665F55;
       color: #C1B6AD; }
+    .button-menu.active {
+      cursor: default; }
   .button-left, .button-right {
     height: 6rem;
     width: 6rem;
@@ -101,6 +105,12 @@ button {
     .button-app svg {
       height: 3.6rem;
       width: 3.6rem; }
+
+.coffee-static {
+  display: flex;
+  gap: 0.8rem; }
+  .coffee-static::after {
+    content: url(images/coffee-cup.svg); }
 
 .hover-coffee {
   display: flex;
@@ -178,13 +188,12 @@ footer {
     border-radius: 100%;
     transition: all 0.1s ease-in; }
     .socials-link:hover {
-      background: #E1D4C9;
-      color: #E1D4C9; }
-  .socials-item, .socials-item.path2, .socials-item.path3 {
+      background: #E1D4C9; }
+  .socials-item, .socials-item .path2, .socials-item .path3 {
     width: inherit;
     height: inherit;
     stroke: #E1D4C9; }
-    .socials-item:hover, .socials-item.path2:hover, .socials-item.path3:hover {
+    .socials-item:hover, .socials-item .path2:hover, .socials-item .path3:hover {
       stroke: #403F3D; }
 
 .contacts {
@@ -232,7 +241,7 @@ footer {
         transform: scale(0);
         transform-origin: center;
         transition: transform 150ms ease-out; }
-      .header-menu__item:hover::before {
+      .header-menu__item:not(.menu-hidden):hover::before, .header-menu__item.menu-active::before {
         transform: scale(1); }
 
 .accent {
