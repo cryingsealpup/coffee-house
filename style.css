@@ -249,7 +249,9 @@ footer {
         transition: transform 150ms ease-out; }
       .header-menu__item:not(.menu-hidden):hover::before, .header-menu__item.menu-active::before {
         transform: scale(1); }
-
+.menu-active {
+  cursor: default;
+}
 .accent {
   color: #B0907A;
   display: inline-block;
