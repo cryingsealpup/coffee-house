@@ -159,6 +159,10 @@ li {
   width: 105%;
   transform: scale(0.95); }
 
+@media (max-width: 64em) {
+  html {
+    font-size: 1.302vw; } }
+
 footer {
   margin-top: 8rem; }
 
@@ -222,7 +226,8 @@ footer {
 @media (max-width: 64em) {
   .footer-wrap {
     flex-direction: column;
-    align-items: flex-start; } }
+    align-items: flex-start;
+    padding: 10rem 6rem; } }
 
 .logo {
   height: 6rem; }
@@ -253,6 +258,8 @@ footer {
         transform: scale(0);
         transform-origin: center;
         transition: transform 150ms ease-out; }
+      .header-menu__item.coffee-static::before {
+        margin-bottom: 0; }
       .header-menu__item:not(.menu-hidden):hover::before, .header-menu__item.menu-active::before {
         transform: scale(1); }
 
@@ -293,7 +300,8 @@ footer {
 
 @media (max-width: 64em) {
   .hero-offer {
-    padding: 10rem 28rem 10rem 6rem; } }
+    padding: 10rem 6rem 10rem 6rem;
+    background-position-x: center; } }
 
 .slider, .slider-wrapper, .slides, .choose, .slide, .controls, .about {
   display: flex; }
@@ -365,6 +373,19 @@ footer {
       flex: 1 auto;
       border-radius: 2rem; }
 
+@media (max-width: 64em) {
+  .about span:first-child {
+    display: inline-block;
+    margin-right: 1rem; }
+  .about-masonry__col, .about-masonry img {
+    width: 100%; }
+  .about-masonry__item {
+    height: 59rem; }
+  .about-masonry__col:nth-child(even) .about-masonry__item:first-child {
+    display: none; }
+  .about-masonry__col:nth-child(odd) .about-masonry__item:last-child {
+    display: none; } }
+
 .app-wrap {
   display: flex;
   align-items: center;
@@ -388,7 +409,9 @@ footer {
 
 @media (max-width: 64em) {
   .app-wrap {
-    flex-direction: column; } }
+    flex-direction: column; }
+    .app-wrap::after {
+      background-size: cover; } }
 
 .menu {
   text-align: center;
