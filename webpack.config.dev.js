@@ -56,6 +56,9 @@ module.exports = {
     }, {
       from: path.resolve(__dirname, './src/assets/favicon'),
       to: path.resolve(__dirname, 'dist/favicon')
+    }, {
+      from: path.resolve(__dirname, './src/index.js'),
+      to: path.resolve(__dirname, 'dist/index.js')
     }]
   }), new HtmlWebpackPlugin({
     template: path.resolve(__dirname, './src/pug/main/index.pug'),
