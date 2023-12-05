@@ -1,7 +1,6 @@
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/app.sass ***!
   \************************************************************************************************************/
-@charset "UTF-8";
 html {
   font-size: 0.6544502617801047vw;
   scroll-behavior: smooth; }
@@ -76,10 +75,16 @@ button {
     margin: 0.2rem;
     color: #403F3D;
     transition: all 0.3s ease; }
+    .button-left::before, .button-right::before {
+      width: 1.25rem;
+      height: 1.2rem;
+      display: inline-block;
+      content: '';
+      background-size: cover; }
   .button-left::before {
-    content: "←"; }
+    background-image: url(images/arrows.svg#left); }
   .button-right::before {
-    content: "→"; }
+    background-image: url(images/arrows.svg#left); }
   .button-app {
     border: 0.1rem solid #665F55;
     width: 20rem;
