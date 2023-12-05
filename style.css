@@ -78,13 +78,17 @@ button {
     .button-left::before, .button-right::before {
       width: 1.25rem;
       height: 1.2rem;
-      display: inline-block;
       content: '';
-      background-size: cover; }
+      background-color: #403F3D;
+      mask-size: cover;
+      display: inline-block;
+      transition: all 0.25s ease; }
   .button-left::before {
-    background-image: url(images/arrows.svg#left); }
+    mask: url(images/left.svg) no-repeat 50% 50%;
+    -webkit-mask: url(images/left.svg) no-repeat 50% 50%; }
   .button-right::before {
-    background-image: url(images/arrows.svg#left); }
+    mask: url(images/right.svg);
+    -webkit-mask: url(images/right.svg); }
   .button-app {
     border: 0.1rem solid #665F55;
     width: 20rem;
@@ -210,8 +214,9 @@ li {
     background: #665F55;
     color: #E1D4C9; }
   .button-left:hover, .button-right:hover {
-    background: #403F3D;
-    color: #E1D4C9; }
+    background: #403F3D; }
+    .button-left:hover::before, .button-right:hover::before {
+      background-color: #E1D4C9; }
   .button-menu:hover {
     background: #665F55;
     color: #E1D4C9; } }
@@ -480,14 +485,14 @@ footer {
 .choose {
   text-align: center;
   gap: 4rem;
-  margin-bottom: -0.6rem; }
+  margin-bottom: -1.35rem; }
 
 .slider, .choose, .slide, .about {
   flex-direction: column;
   align-items: center; }
 
 .slider {
-  gap: 3.6rem;
+  gap: 2.2rem;
   width: 100%; }
   .slider-wrapper {
     width: 100%;
@@ -531,10 +536,8 @@ footer {
 @media (max-width: 380px) {
   .slide-image {
     height: 34.8rem; }
-  .slider {
-    gap: 3.4rem; }
-    .slider .button {
-      display: none; } }
+  .slider .button {
+    display: none; } }
 
 .about {
   gap: 4rem; }

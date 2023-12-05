@@ -1,9 +1,10 @@
-<svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-<symbol viewBox="0 0 14 14" id='right' fill="none" xmlns="http://www.w3.org/2000/symbol">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+<defs>
+<symbol viewBox="0 0 14 14" id='right' fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/symbol">
 <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
-<symbol width="14" height="14" viewBox="0 0 14 14" id='left' fill="none" xmlns="http://www.w3.org/2000/symbol">
+<symbol viewBox="0 0 14 14" id='left' fill="none" width="14" height="14" xmlns="http://www.w3.org/2000/symbol">
 <path d="M13.5 7H1M1 7L7 1M1 7L7 13" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
-  
+  </defs>
 </svg>
