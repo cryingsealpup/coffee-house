@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_app_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sass/app.sass */ \"./src/sass/app.sass\");\n\r\nconsole.log('fgdf')\r\nwindow.onresize = () => {\r\n    document.querySelectorAll('input[type=\"checkbox\"]:checked').forEach((el) => {\r\n        \r\n        el.checked = false\r\n    })\r\n}\r\n\r\n\n\n//# sourceURL=webpack://coffee-house/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_app_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sass/app.sass */ \"./src/sass/app.sass\");\n\r\n\r\nwindow.onresize = () => { // to skip all checked chekboxes (burger, load more)\r\n    document.querySelectorAll('input[type=\"checkbox\"]:checked').forEach((el) => {\r\n        \r\n        el.checked = false\r\n    })\r\n}\r\n\r\nconst slider = document.querySelector('.slider'), sliderWrapper = slider.querySelector('.slider-wrapper'),\r\n      slides = sliderWrapper.querySelectorAll('.slides'), controls = slider.querySelector('.button'), \r\n      left = controls.querySelector('.button-left '), right = controls.querySelector('button-right'),\r\n      slideWidth = slides.children[0].offsetWidth\r\n\r\nslides.children.forEach((el) => {\r\n    el.scrollIntoView({\r\n        behavior: 'smooth',\r\n        inline: 'start'\r\n    })\r\n})\n\n//# sourceURL=webpack://coffee-house/./src/index.js?");
 
 /***/ })
 
