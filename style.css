@@ -509,7 +509,7 @@ footer {
 .slides {
   width: 48rem;
   overflow: auto;
-  touch-action: pan-y;
+  touch-action: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scroll-snap-points-y: repeat(100%);
@@ -744,7 +744,8 @@ footer {
     order: 3;
     appearance: none; }
     .menu .load-more:checked {
-      visibility: hidden; }
+      visibility: hidden;
+      z-index: 0; }
       .menu .load-more:checked + .menu-tabs {
         max-height: 230rem; }
     .menu .load-more input {
