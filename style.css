@@ -510,17 +510,20 @@ footer {
   width: 48rem;
   overflow: auto;
   touch-action: pan-y;
-  user-select: none;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  scroll-snap-points-y: repeat(100%);
   scroll-padding: 0 0;
   cursor: grab; }
   .slides::-webkit-scrollbar {
     width: 0;
     background: transparent; }
+  .slides.active {
+    scroll-snap-type: unset; }
 
 .slide {
   gap: 1.6rem;
+  user-select: none;
   scroll-snap-align: start; }
   .slide-image {
     height: 48rem;
