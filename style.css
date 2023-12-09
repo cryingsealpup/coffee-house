@@ -512,8 +512,7 @@ footer {
   touch-action: scroll;
   scroll-snap-type: x mandatory;
   scroll-snap-points-y: repeat(100%);
-  scroll-padding: 0 0;
-  cursor: grab; }
+  scroll-padding: 0 0; }
   .slides::-webkit-scrollbar {
     width: 0;
     background: transparent; }
