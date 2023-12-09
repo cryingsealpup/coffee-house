@@ -510,7 +510,6 @@ footer {
   width: 48rem;
   overflow: auto;
   touch-action: scroll;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scroll-snap-points-y: repeat(100%);
   scroll-padding: 0 0;
@@ -528,7 +527,13 @@ footer {
   .slide-image {
     height: 48rem;
     object-fit: cover;
-    margin-bottom: 0.4rem; }
+    margin-bottom: 0.4rem;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; }
 
 .controls-btn {
   cursor: pointer;
