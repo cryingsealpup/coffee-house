@@ -513,6 +513,8 @@ footer {
   scroll-snap-type: x mandatory;
   scroll-snap-points-y: repeat(100%);
   scroll-padding: 0 0; }
+  .slides .smooth {
+    scroll-behavior: smooth; }
   .slides::-webkit-scrollbar {
     width: 0;
     background: transparent; }
