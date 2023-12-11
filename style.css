@@ -392,7 +392,7 @@ footer {
       gap: 10rem;
       background: #E1D4C9;
       justify-content: start;
-      z-index: 1; }
+      z-index: 2; }
   .header-menu, .header-menu__wrapper {
     flex-direction: column; }
   .header-menu, .header-menu__wrapper, .header .coffee-static {
