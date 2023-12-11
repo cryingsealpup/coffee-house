@@ -60,6 +60,9 @@ module.exports = {
       from: path.resolve(__dirname, './src/assets/products.json'),
       to: path.resolve(__dirname, 'dist/products.json')
     }, {
+      from: path.resolve(__dirname, './src/assets/enjoy.mp4'),
+      to: path.resolve(__dirname, 'dist/enjoy.mp4')
+    }, {
       from: path.resolve(__dirname, './src/script.js'),
       to: path.resolve(__dirname, 'dist/script.js')
     }]

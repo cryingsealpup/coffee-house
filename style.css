@@ -464,18 +464,32 @@ footer {
     font-style: italic; } }
 
 .hero {
-  color: #E1D4C9; }
+  color: #E1D4C9;
+  position: relative; }
   .hero-offer {
     padding: 10rem 73rem 10rem 10rem;
-    background-image: url(images/img-hero.png);
     background-position-y: center;
     background-size: cover;
     border-radius: 4rem;
     display: flex;
     flex-direction: column;
     gap: 4rem; }
+    .hero-offer > * {
+      z-index: 1;
+      position: relative; }
     .hero-offer .button span {
       margin-left: 2.8rem; }
+  .hero video {
+    position: absolute;
+    width: calc(100% - 8rem);
+    height: calc(100% - 3rem);
+    border-radius: 4rem;
+    margin: 0 auto;
+    object-fit: cover;
+    /* top: 0 */
+    left: 0;
+    right: 0;
+    z-index: 0; }
 
 @media (max-width: 768px) {
   .hero-offer {
@@ -484,7 +498,9 @@ footer {
 
 @media (max-width: 380px) {
   .hero-offer {
-    padding: 6rem 1.6rem; } }
+    padding: 6rem 1.6rem; }
+  .hero video {
+    width: 100%; } }
 
 .slider, .slider-wrapper, .slides, .choose, .slide, .controls, .about {
   display: flex; }
@@ -707,7 +723,15 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
-    row-gap: 3.91rem; }
+    row-gap: 3.91rem;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease; }
+    .menu .tab.hidden {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      margin-left: -4rem; }
 
 .card-image {
   border-radius: inherit;
