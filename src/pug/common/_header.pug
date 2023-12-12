@@ -1,0 +1,42 @@
+- 
+    const menu_items = [ 
+        {
+            text: 'Favorite coffee',
+            link: './#favorite'
+        },
+        {
+            text: 'About',
+            link: './#about'
+        },
+        {
+            text: 'Mobile app',
+            link: './#app'
+        },        
+        {
+            text: 'Contact us',
+            link: '#contact'
+        },
+    ]
+
+ 
+mixin header(link=true)
+    header
+        .container.header 
+            .logo 
+                a(href='./', title='Go to main page')
+                    img(src="./images/logo.svg", alt="Resource Coffee Shop Logo")
+            nav 
+                input.is-burger(type="checkbox", title='Toggle menu')
+                .burger-icon
+                    span 
+                    span 
+                div.header-menu__wrapper
+                    ul.header-menu
+                        each item in menu_items
+                            li 
+                                a.action.header-menu__item(href= item.link, title='Go to ' + item.text)= item.text
+                    if link == true 
+                        a(href='./menu.html', title='See menu').action.header-menu__item.coffee-static Menu
+                    else 
+                        span.action.header-menu__item.coffee-static.menu-active Menu
+        

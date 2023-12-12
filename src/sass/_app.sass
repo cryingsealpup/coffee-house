@@ -1,0 +1,38 @@
+.app
+    &-wrap 
+        display: flex 
+        align-items: center
+        gap: 10rem
+        > *
+            flex: 1
+        &::after 
+            content: ''
+            background-image: url('../assets/img/mobile-screens.png')
+            background-size: contain
+            width: 63rem
+            height: 63rem
+    &-info 
+        display: flex 
+        flex-direction: column
+        gap: 4rem
+    &-links
+        display: flex
+        gap: 2rem
+
+@media (max-width: 768px)
+    .app
+        &-wrap 
+            flex-direction: column
+            &::after 
+                background-size: cover
+
+@media (max-width: 380px)
+    .app 
+        &-wrap
+            gap: 4rem
+            &::after 
+                width: 100%
+                height: 34.8rem
+            
+        &-links 
+            flex-direction: column

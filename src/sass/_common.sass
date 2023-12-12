@@ -1,0 +1,243 @@
+html
+    font-size: 0.6544502617801047vw
+    scroll-behavior: smooth
+
+body
+    background: #E1D4C9
+    color: #403F3D
+    font-size: 1.6rem
+    font-family: 'Inter', sans-serif
+    line-height: 150%
+    margin: 1rem 0 0
+
+p, h1, h2, h3, ul
+    margin: 0
+
+
+
+.container
+    max-width: 144rem
+    margin: 0 auto
+    box-sizing: border-box
+    padding: 1rem 4rem
+
+main 
+    &>*
+        &:not(:last-child)
+            padding-bottom: 5rem
+        &:not(:first-child)
+            padding-top: 5rem
+            
+            
+
+a 
+    text-decoration: none
+    color: inherit
+
+path 
+    fill:inherit
+    stroke:inherit
+
+button 
+    border: none
+    background: transparent
+    padding: 0
+    color: inherit
+
+.button
+    font-weight: 600
+    line-height: 150%
+    border-radius: 10rem
+    width: 20rem
+    height: 6.4rem
+    display: flex
+    cursor: pointer
+    justify-content: center
+    align-items: center
+    color: #403F3D
+    &-primary
+        background: #E1D4C9
+        font-size: 1.6rem
+        line-height: 150%
+    &-menu 
+        padding: 0.8rem 1.6rem 0.8rem 0.8rem
+        border: 0.1rem solid #C1B6AD
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        transition: all 0.3s ease
+        cursor: pointer
+        &.active
+            background: #665F55
+            color: #E1D4C9
+        &.active
+            cursor: default
+    &-left, &-right
+        height: 6rem
+        width: 6rem
+        border-radius: 100%
+        border: 0.1rem solid #665F55
+        box-sizing: content-box
+        margin: 0.2rem
+        color: #403F3D
+        transition: all 0.3s ease
+        &::before 
+            width: 1.25rem
+            height: 1.2rem
+            content: ''
+            background-color: #403F3D
+            mask-size: cover
+            display: inline-block
+            transition: all 0.25s ease
+    &-left::before
+        mask: url('../assets/img/left.svg') no-repeat 50% 50% 
+        -webkit-mask: url('../assets/img/left.svg') no-repeat 50% 50% 
+        
+    &-right::before
+        mask: url('../assets/img/right.svg') 
+        -webkit-mask: url('../assets/img/right.svg') 
+    &-app 
+        border: 0.1rem solid #665F55
+        width: 20rem
+        color: #665F55
+        border-radius: 10rem
+        transition: all 0.3s ease-in
+        padding: 1.2rem 2rem
+        display: inline-block
+        display: flex
+        gap: 0.8rem
+        align-items: center
+        box-sizing: border-box
+        
+        p
+            display: flex
+            flex-direction: column
+            text-align: left
+        svg
+            height: 3.6rem
+            width: 3.6rem
+
+.coffee-static
+    display: flex
+    gap: 0.8rem
+    cursor: pointer
+    &::after
+        content: url('../assets/img/coffee-cup.svg')    
+        height: 2rem
+        width: 2rem
+
+.menu-active
+    cursor: default
+    
+.hover-coffee
+    display: flex
+    gap: 0.8rem
+
+    &::after
+        content: url('../assets/img/coffee-cup.svg')
+        width: 2rem
+        height: 2rem
+        margin-right: 0
+        margin-top: 0.3rem
+        transform: scale(0)
+        transition: all 0.3s ease
+
+h1 
+    font-size: 7.2rem
+    line-height: 105%
+
+h2 
+    font-size: 6rem
+
+h2
+    line-height: 125%
+
+ul 
+    padding: 0
+
+li 
+    list-style: none
+
+.zoom-out
+    &__wrapper
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    img 
+        object-fit: cover
+        object-position: center
+        transition: all 0.3s ease-in
+        cursor: pointer
+        min-width: 110%
+        min-height: 110%
+
+
+.load-more 
+    display: none 
+    width: 100%
+    justify-content: center
+
+@media (min-width: 1440px) 
+    html 
+        font-size: 10px
+@media (max-width: 768px)
+    html
+        font-size: 1.302vw
+    .load-more 
+        display: flex
+        input
+            width: 6rem
+            height: 6rem
+            opacity: 0
+            position: absolute
+            z-index: 2
+            margin: 0
+        &:before
+            content: url('../assets/img/button-icon-dark.svg')
+            width: 6rem
+            height: 6rem
+    .hover-coffee
+        span
+            margin-top: 0.5rem
+        &::after
+            transform: scale(1)
+            margin-right: 2.8rem
+    .coffee-static::after
+        width: 4rem
+        height: 4rem
+
+@media (max-width: 380px)
+    html 
+        font-size: 2.632vw
+    .container
+        padding: 1rem 1.6rem
+    h1 
+        font-size: 4.2rem
+        line-height: 115%
+    h2
+        font-size: 3.2rem
+        line-height: 125%
+
+
+@media (hover: hover)
+    .zoom-out:hover img
+        width: 105%
+        transform: scale(0.95)
+    .hover-coffee:hover
+        &::after
+            transform: scale(1)
+            margin-right: 2.8rem
+    .button
+        &-app:hover
+            background: #665F55
+            color: #E1D4C9
+        &-left, &-right
+            &:hover
+                background: #403F3D
+                &::before
+                    background-color: #E1D4C9
+        &-menu:hover
+            background: #665F55
+            color: #E1D4C9

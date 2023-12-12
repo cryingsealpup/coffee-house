@@ -1,0 +1,39 @@
+- 
+    var slides = [
+        {
+            name: 'S&CloseCurlyQuote;mores Frappuccino',
+            description: 'This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.',
+            price: '$5.50'
+        },
+        {
+            name: 'Caramel Macchiato',
+            description: 'Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.',
+            price: '$5.00'
+        },
+        {
+            name: 'Ice coffee',
+            description: 'A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.',
+            price: '$4.50'
+        }
+    ]
+
+section.choose.container#favorite
+    h2 
+        span Choose your 
+        span.accent favorite 
+        span coffee
+    .slider 
+        .slider-wrapper 
+            .button.button-left 
+            .slides
+                each slide, index in slides 
+                    .slide 
+                        img(src='./images/slider/coffee-slider-' + (index + 1) + '.png', alt=slide.description).slide-image
+                        h3.bold !{slide.name}
+                        p= slide.description 
+                        p.bold= slide.price
+            .button.button-right
+        .controls
+            .controls-btn.active
+            .controls-btn
+            .controls-btn

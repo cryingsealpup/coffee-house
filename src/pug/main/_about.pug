@@ -1,0 +1,19 @@
+.section.about.container#about 
+    h2 
+        span Resource is 
+        span.accent the perfect 
+        span.accent and cozy place 
+        span where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
+    .about-masonry 
+        //- each index in [1, 2, 3, 4]
+        //-     .about-masonry__item
+        //-         img(src='./images/about/about-' + index + '.png', alt='About Us image')        
+
+        .about-masonry__col
+            each index in [1, 2]
+                    .about-masonry__item.zoom-out.zoom-out__wrapper
+                        img(src='./images/about/about-' + index + '.png', alt='About Us image')  
+        .about-masonry__col  
+            each index in [3, 4]
+                    .about-masonry__item.zoom-out.zoom-out__wrapper
+                        img(src='./images/about/about-' + index + '.png', alt='About Us image')          

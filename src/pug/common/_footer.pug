@@ -1,0 +1,25 @@
+mixin svg(link, path) 
+    a.socials-link(href=link, title='Join us on' + link) 
+        svg.socials-item 
+            use(xlink:href=path, href=path)
+
+footer
+    .container.footer#contact
+        .footer-wrap
+            div 
+                h2 
+                    span Sip, Savor, Smile. 
+                    span.accent It’s coffee time!
+                .socials 
+                    +svg('http://twitter.com', "./images/socials.svg#twitter")
+                    +svg('http://instagram.com', "./images/socials.svg#instagram")
+                    +svg('http://facebook.com', "./images/socials.svg#facebook")
+            div 
+                h3.bold Contact us
+                .contacts 
+                    p.contacts-address.header-menu__item
+                        a(href='https://maps.app.goo.gl/JpdXVM8Bm2L3uUccA', title='Address', target='_blank') 8558 Green Rd.,  LA
+                    p.contacts-phone.header-menu__item
+                        a(href='tel:+1(603)555-0123', title='Call us')  +1 (603) 555-0123
+                    p.contacts-hours
+                        span Mon-Sat: 9:00 AM – 23:00 PM

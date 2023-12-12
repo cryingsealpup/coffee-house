@@ -1,0 +1,42 @@
+.hero
+    color: #E1D4C9
+    position: relative
+
+    &-offer
+        padding: 10rem 73rem 10rem 10rem
+        // background-image: url('../assets/img/img-hero.png')
+        background-position-y: center
+        background-size: cover
+        border-radius: 4rem
+        display: flex
+        flex-direction: column
+        gap: 4rem
+        > *
+            z-index: 1
+            position: relative
+        .button span
+            margin-left: 2.8rem
+    video 
+        position: absolute
+        width: calc(100% - 8rem)
+        height: calc(100% - 3rem)
+        border-radius: 4rem
+        margin: 0 auto
+        object-fit: cover
+        /* top: 0 */
+        left: 0
+        right: 0
+        z-index: 0
+            
+
+@media (max-width: 768px)
+    .hero
+        &-offer 
+            padding: 10rem 6rem 10rem 6rem
+            background-position-x: center
+
+@media (max-width: 380px)
+    .hero-offer
+        padding: 6rem 1.6rem
+    .hero video 
+        width: 100%

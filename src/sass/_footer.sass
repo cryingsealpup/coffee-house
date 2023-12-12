@@ -1,0 +1,79 @@
+footer
+    margin-top: 8rem
+.footer
+    color: #E1D4C9
+    &-wrap 
+        background: #665F55
+        border-radius: 4rem
+        display: flex
+        gap: 10rem
+        padding: 10rem
+        align-items: center
+        > *
+            flex: 1
+            display: flex
+            flex-direction: column
+            gap: 4rem
+    .header-menu__item 
+        cursor: pointer
+        width: fit-content
+        &::before
+            margin-top: 0.8rem
+            margin-bottom: 0
+            background: #E1D4C9
+
+.socials
+    display: flex 
+    gap: 1.04rem
+    color: transparent
+    &-link
+        width: 5.99rem
+        height: 5.99rem
+        border: 0.01rem solid #E1D4C9
+        border-radius: 100%
+        transition: all 0.3s ease-in
+    &-item, &-item .path2, &-item .path3
+        width: inherit
+        height: inherit
+        stroke: #E1D4C9            
+        
+.contacts
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    a, span
+        display: inline-flex
+        gap: 0.8rem
+        &:before
+            display: inline-block
+            width: 2rem
+            height: 2rem
+
+    .contacts-phone a::before
+        content: url('../assets/img/footer/phone.svg')
+    .contacts-address a::before
+        content: url('../assets/img/footer/pin.svg')
+    .contacts-hours span::before
+        content: url('../assets/img/footer/clock.svg')
+
+@media (max-width: 768px)
+    .footer
+        &-wrap 
+            flex-direction: column
+            align-items: flex-start
+            padding: 10rem 6rem
+
+@media (hover: hover)
+    .socials
+        &-link:hover
+            background: #E1D4C9
+        &-item, &-item .path2, &-item .path3
+            &:hover
+                stroke: #403F3D
+
+@media (max-width: 380px)
+    .footer
+        margin-top: 8.2rem
+        &-wrap 
+            padding: 6rem 1.6rem
+            gap: 4rem

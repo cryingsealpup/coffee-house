@@ -1,0 +1,142 @@
+.logo
+    height: 6rem 
+    width: 10rem
+    z-index: 2
+    img
+        height: 100% 
+        object-fit: cover
+
+.header
+    display: flex
+    nav 
+        width: 100%
+    &-menu 
+        display: flex
+        column-gap: 4rem
+        margin-left: auto
+        li 
+            margin-top: -0.2rem
+            a
+                display: inline
+        &__wrapper
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            
+        &__item
+            position: relative
+            overflow: hidden
+            &::before
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 0.2rem
+                margin-bottom: -0.8rem
+                background-color: #403F3D
+                transform: scale(0)
+                transform-origin: center
+                transition: transform 0.3s ease-out
+            &.coffee-static
+                margin-left: auto
+                height: 2.9rem
+                &::before
+                    margin-bottom: 0
+
+.is-burger, .is-burger ~ .burger-icon
+    position: absolute
+    box-sizing: border-box
+    right: 0
+    width: 4.3rem
+    height: 4.3rem
+    top: 2.9rem
+    right: 4rem
+
+.is-burger
+    z-index: 3
+    opacity: 0
+    ~ .burger-icon
+        z-index: 2
+
+@media (hover: hover)
+    .header-menu__item
+        &:not(.menu-hidden):hover, &.menu-active
+            &::before 
+                transform: scale(1)
+
+@media (min-width: 769px)
+    .is-burger, .is-burger ~ .burger-icon 
+        display: none
+    
+@media (max-width: 768px) 
+    .header
+        .action 
+            font-size: 3.2rem
+        &-menu
+            gap: 5.4rem
+            align-items: center
+            &__wrapper
+                position: fixed
+                right: -300%
+                transition: right 0.4s ease-in-out
+                width: 100%
+                height: 100%
+                padding-top: 6rem
+                top: 9.85rem
+                gap: 10rem
+                background: #E1D4C9
+                justify-content: start
+                z-index: 2
+        &-menu, &-menu__wrapper
+            flex-direction: column
+        &-menu, &-menu__wrapper, .coffee-static
+            margin: 0
+        .coffee-static
+            height: 3.8rem
+            margin-top: -0.8rem
+
+    body:has(.is-burger:checked)
+        overflow-y: hidden
+
+    .burger-icon 
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 100%
+        border: 0.1rem solid #665F55
+        flex-direction: column
+        gap: 0.6rem
+        transition: all 0.4s ease-in-out
+        transform-origin: 4.3rem 0
+        span
+            transition: transform 0.4s ease-in-out
+            display: block
+            width: 1.6rem
+            border-radius: 0.1rem 
+            border: 0.15rem solid #403F3D
+            background: #403F3D
+            &:first-child
+                transform-origin: 0.4rem 0.2rem
+            &:last-child
+                transform-origin: 0.3rem -0.04rem
+
+
+    .is-burger
+        &:checked
+            ~ .header-menu__wrapper
+                right: 0
+            ~ svg .first
+                transform: rotate(90)
+            ~ .burger-icon
+                span
+                    &:first-child
+                        transform: rotate(45deg)
+                    &:last-child
+                        transform: rotate(-45deg)
+
+@media (max-width: 380px)
+    .is-burger, .is-burger ~ .burger-icon
+        right: 1.65rem

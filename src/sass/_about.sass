@@ -1,0 +1,64 @@
+.about
+    gap: 4rem
+    &-masonry
+        display: flex
+        flex-wrap: wrap
+        gap: 4rem
+        &__col
+            display: flex
+            flex-direction: column
+            gap: 4rem
+            width: 66rem
+            border-radius: 2rem
+            &:nth-child(even)
+                .about-masonry__item:first-child
+                    height: 43rem
+            &:nth-child(odd)
+                .about-masonry__item:last-child 
+                    height: 43rem
+        &__item 
+            width: inherit
+            max-height: 59rem
+            flex: 1 auto
+            border-radius: 2rem
+            // img 
+            //     object-fit: cover
+            //     object-position: center
+            //     transition: all 0.1s ease-in
+            //     cursor: pointer
+            //     &:hover
+            //         width: calc(100% + 72.6rem * 0.05)
+            //         transform: scale(0.95)
+
+@media (max-width: 768px)
+    .about
+        span:first-child
+            display: inline-block
+            margin-right: 1rem
+        &-masonry 
+            &__col, img
+                width: 101%
+                overflow: hidden
+            &__item 
+                height: 59rem
+                img 
+                    object-position: 0rem -5rem
+            &__col
+                &:nth-child(even)
+                    .about-masonry__item:first-child
+                        display: none
+                &:nth-child(odd)
+                    .about-masonry__item:last-child 
+                        display: none
+
+@media (max-width: 380px)
+    .about
+        &-masonry
+            &__item
+                height: 59rem
+                width: 34.8rem
+                img
+                    height: 59rem
+                    width: 34.8rem
+                    object-fit: cover
+                    object-position: -13rem -2rem

@@ -1,0 +1,82 @@
+
+.slider, .slider-wrapper, .slides, .choose, .slide, .controls, .about
+    display: flex
+.choose 
+    text-align: center
+    gap: 4rem
+    margin-bottom: -1.35rem
+
+.slider, .choose, .slide, .about
+    flex-direction: column
+    align-items: center
+
+.slider
+    gap: 2.2rem
+    width: 100%
+    &-wrapper 
+        width: 100%
+        justify-content: space-between
+        align-items: center
+
+.slides 
+    width: 48rem
+    overflow: auto
+    touch-action: scroll
+    scroll-snap-type: x mandatory
+    scroll-snap-points-y: repeat(100%)
+    scroll-padding: 0 0
+    .smooth
+        scroll-behavior: smooth
+    &::-webkit-scrollbar 
+        width: 0
+        background: transparent
+    &.active 
+        scroll-snap-type: unset
+
+.slide
+    gap: 1.6rem
+    user-select: none
+    scroll-snap-align: start
+    &-image 
+        height: 48rem
+        object-fit: cover
+        margin-bottom: 0.4rem
+        user-drag: none  
+        user-select: none
+        -moz-user-select: none
+        -webkit-user-drag: none
+        -webkit-user-select: none
+        -ms-user-select: none
+
+.controls
+    &-btn 
+        cursor: pointer
+        padding: 0.6rem
+        transition: all 0.15s ease
+        &.active
+            &::before
+                background: #665F55
+        &::before
+            content: ""
+            display: inline-block
+            border-radius: 10rem
+            width: 4rem
+            height: 0.4rem
+            background: #C1B6AD
+            transition: all 0.3s ease
+
+@media (hover: hover)
+    .controls-btn:hover::before
+        background: #665F55
+
+@media (max-width: 768px)
+    .choose .accent
+        margin-right: 0
+
+@media (max-width: 380px)
+    .slide
+        &-image 
+            height: 34.8rem
+    .slider 
+        .button
+            display: none
