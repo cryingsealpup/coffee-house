@@ -1,5 +1,5 @@
 import './sass/app.sass'
-
+import productsJson from "./assets/products.json"
 window.onresize = () => { // to skip all checked chekboxes (burger, load more)
   document.querySelectorAll('input[type="checkbox"]:checked').forEach((el) => {
 
@@ -26,6 +26,7 @@ if (slider) {
     leftBtn = document.querySelector('.button-left'),
     rightBtn = document.querySelector('.button-right'),
     pagination = document.querySelectorAll('.controls-btn'),
+    pgWidth = pagination[0].offsetWidth,
     defaultScroll = slider.scrollLeft,
     stopDragging = (e) => {
       isDown = false
@@ -36,7 +37,7 @@ if (slider) {
       behavior: 'smooth'
     })
   let isDown = false,
-    startX, scrollLeft, scrollEnd = false
+    startX, scrollLeft = 0, scrollEnd = false
 
   // MAIN SCROLL LOGIC
   // sets currrent pagination item 
@@ -51,13 +52,29 @@ if (slider) {
 
 
 
-  // Makes buttons clickable
+  // Make buttons clickable
   leftBtn.addEventListener('click', e => {
-    scroll(slideWidth)
+    
+    if (scrollLeft == 0) {
+      scroll(-slideWidth * 2)
+      scrollLeft = slideWidth * 2
+    } else {
+      scrollLeft -= slideWidth
+      scroll(slideWidth)
+    }
   })
 
+
   rightBtn.addEventListener('click', e => {
-    scroll(-slideWidth)
+    console.log(slider.offsetLeft)
+    if (scrollLeft == slideWidth * 2) {
+      scroll(0, false)
+      scrollLeft = 0
+    } else {
+      scroll(-slideWidth)
+      scrollLeft += slideWidth
+    }
+   // move(document.querySelector('.controls-btn.active'))
   })
 
 
@@ -69,9 +86,7 @@ if (slider) {
     scrollLeft = slider.scrollLeft
   })
 
-  slider.scrollIntoView({
-    behavior: 'smooth'
-  })
+
 
   slider.addEventListener('mouseleave', stopDragging)
   slider.addEventListener('mouseup', stopDragging)
@@ -83,17 +98,43 @@ if (slider) {
     const x = e.pageX - slider.offsetLeft
     const SCROLL_SPEED = 2 // this variable regulates easiness of slide dragging
     const walk = (x - startX) * SCROLL_SPEED
-    console.log(x, startX, walk, scrollLeft, slideWidth)
     if (scrollLeft == 0 && walk > 0) {
-      slider.scrollLeft = slideWidth * 2
+      leftBtn.click()
     } else if (scrollLeft == slideWidth * 2 && walk < 0) {
-      slider.scrollLeft = 0
+      rightBtn.click()
     } else if (scrollLeft >= 0 && scrollLeft < slideWidth * 3 && walk) {
       slider.scrollLeft = scrollLeft - walk
     }
 
   })
+
+//   move(pagination[0])
+//   // Slider autoplay (time elapsed indicator)
+// var i = 0;
+// function move(elem) {
+//   console.log(elem)
+//   if (i == 0) {
+//     i = 1;
+//     let id = setInterval(frame, 100), width = 0
+//     function frame() {
+//       if (width >= pgWidth) {
+//         clearInterval(id);
+//         i = 0;
+//       } else {
+//         width++;
+//         elem.style.width = width + "%";
+//       }
+//     }
+//   }
+//   rightBtn.click()
+// }
 }
+
+
+
+
+
+
 
 // Work with menu tabs switching
 const products = document.querySelectorAll('.tab'), productsWrapper = document.querySelectorAll('.menu-tabs__wrap .button-menu')
@@ -107,9 +148,12 @@ if (products) {
       document.querySelector('.load-more').style.display = 'flex'
       document.querySelector('.load-more').checked = false
      }
-     controls.forEach(el => {console.log(el);el.classList.remove('active')})
+     controls.forEach(el => el.classList.remove('active'))
      btn.classList.add('active')
   }))
+  // Create modals
+  
+  console.log(productsJson)
 }
 
-// Create modals
+
